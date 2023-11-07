@@ -1,4 +1,5 @@
 import './App.css';
+import Quiz from './components/Quiz';
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
         <div className="container">
           <h1>Animal Quiz</h1>
           <div className="quiz">
+            <Quiz />
           </div>
         </div>
       </body>
