@@ -27,7 +27,7 @@ const questions = [
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
-  const [quizCompleted, setQuizCompleted] = useState(false);
+  const [quizCompleted, setQuizCompleted] = useState(true);
 
   const handleAnswer = (selectedOption) => {
     if (selectedOption === questions[currentQuestion].correctAnswer) {
@@ -43,7 +43,7 @@ const Quiz = () => {
 
   if (quizCompleted) {
     return (
-      <div>
+      <div className={styles.finalScreen}>
         <h2>Quiz Concluído!</h2>
         <p>Pontuação final: {score} de {questions.length}</p>
       </div>
