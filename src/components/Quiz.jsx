@@ -27,7 +27,7 @@ const questions = [
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
-  const [quizCompleted, setQuizCompleted] = useState(true);
+  const [quizCompleted, setQuizCompleted] = useState(false);
 
   const handleAnswer = (selectedOption) => {
     if (selectedOption === questions[currentQuestion].correctAnswer) {
