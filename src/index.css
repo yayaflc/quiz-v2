@@ -11,7 +11,7 @@
     --quicksand: 'Quicksand', sans-serif;
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
     --card-color: #f3d2c1;
     --bg-color: #fef6e4;
     --tittle-color: #001858;
@@ -21,8 +21,8 @@
     --btn-hover-icon: #ffffffcd;
 }
 
-[data-theme="dark"] {
-    --card-color:#001858;
+[data-theme='dark'] {
+    --card-color:#001858 !important;
     --bg-color:#02092b;
     --tittle-color: #f3d2c1;
     --text-color: #f3d2c1;
@@ -142,7 +142,7 @@ body {
     width: 100%;
 } */
 
-/* #next-btn {
+.nextBtn {
     font-family: var(--quicksand);
     font-size: 18px;
     background: var(--tittle-color);
@@ -157,6 +157,7 @@ body {
     display: none;
 }
 
+/* 
 .correct {
     background: var(--verde-claro);
     color: var(--verde);
