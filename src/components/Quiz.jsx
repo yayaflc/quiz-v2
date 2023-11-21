@@ -63,8 +63,7 @@ const Quiz = () => {
       <ul>
         {questions[currentQuestion].options.map((option, index) => (
           <li key={option}>
-            <button
-              onClick={() => handleAnswer(option)}
+            <button onClick={() => handleAnswer(option)}
               style={{
                 backgroundColor:
                   selectedOption === option
@@ -77,7 +76,13 @@ const Quiz = () => {
                   ? option === questions[currentQuestion].correctAnswer
                     ? '#155724'
                     : '#721c24'
-                  :'#956947',
+                  :'',
+                color:
+                  selectedOption === option
+                  ? option === questions[currentQuestion].correctAnswer
+                    ? '#155724'
+                    : '#721c24'
+                  :'',
               }}
               disabled={selectedOption !== null}
             >

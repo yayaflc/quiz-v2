@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import "@theme-toggles/react/css/Around.css"
-import { Around } from "@theme-toggles/react"
-
+import "@theme-toggles/react/css/Around.css";
+import styles from "./ToggleTheme.module.css";
+import { Around } from "@theme-toggles/react";
+  
 const ToggleTheme = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem('theme') ||
@@ -20,11 +21,7 @@ const ToggleTheme = () => {
 
   return (
     <div>
-      {/* <label>
-        <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
-        Toggle Theme
-      </label> */}
-      <Around duration={750} toggled={theme === 'dark'} toggle={toggleTheme} />
+      <Around className={styles.toggleBtn} duration={750} toggled={theme === 'dark'} toggle={toggleTheme} />
     </div>
   );
 };
