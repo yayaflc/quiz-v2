@@ -1,22 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Quicksand:wght@300;400;700&display=swap');
 
-:root {
-    --lilita-one: 'Lilita One', cursive;
-    --quicksand: 'Quicksand', sans-serif;
-}
-
-[data-theme="light"] {
-    --tittle-color: #001858;
-    --text-color: #172c66;
-    --btn-hover-color: #956947;
-}
-
-[data-theme="dark"] {
-    --tittle-color: #f3d2c1;
-    --text-color: #f3d2c1;
-    --btn-hover-color: #728cd4;
-}
-
 h2 {
     font-family: var(--quicksand);
     font-size: 24px;
@@ -58,6 +41,36 @@ button:disabled {
 
 li::marker {
     content: none;
+}
+
+.nextBtn {
+    font-family: var(--quicksand);
+    font-size: 18px;
+    background: var(--tittle-color);
+    color: var(--bg-color);
+    font-weight: 800;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+}
+
+.finalScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.finalScreen > h2 {
+    font-size: 28px;
+}
+
+.finalScreen > p {
+    font-weight: 600;
+    font-size: 22px;
 }
 
 @media (max-width: 650px) {

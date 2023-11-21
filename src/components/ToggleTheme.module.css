@@ -1,0 +1,31 @@
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 50px;
+  background: var(--toggle-bg-icon);
+
+  cursor: pointer;
+  padding: 2px;
+  width: 50px;
+  height: 50px;
+
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.toggleBtn:hover {
+  background: var(--toggle-hover-icon);
+}
+
+.toggleBtn svg {
+  font-size: 38px;
+  color: var(--toggle-icon-theme);
+}
+
+.toggleBtn svg path {
+  transition: all 0.4s linear;
+}

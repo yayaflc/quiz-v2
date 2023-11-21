@@ -1,5 +1,5 @@
 import styles from './Quiz.module.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const questions = [
   {
@@ -28,11 +28,18 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [quizCompleted, setQuizCompleted] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
 
-  const handleAnswer = (selectedOption) => {
-    if (selectedOption === questions[currentQuestion].correctAnswer) {
+  const handleAnswer = (option) => {
+    if (option === questions[currentQuestion].correctAnswer) {
       setScore(score + 1);
     }
+
+    setSelectedOption(option);
+  };
+
+  const handleNextQuestion = () => {
+    setSelectedOption(null);
 
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -54,12 +61,39 @@ const Quiz = () => {
     <div>
       <h2>{currentQuestion + 1}. {questions[currentQuestion].question}</h2>
       <ul>
-        {questions[currentQuestion].options.map((option) => (
+        {questions[currentQuestion].options.map((option, index) => (
           <li key={option}>
-            <button onClick={() => handleAnswer(option)}>{option}</button>
+            <button onClick={() => handleAnswer(option)}
+              style={{
+                backgroundColor:
+                  selectedOption === option
+                    ? option === questions[currentQuestion].correctAnswer
+                      ? '#cdf2d6'
+                      : '#eebbbf'
+                    : '',
+                borderColor:
+                  selectedOption === option
+                  ? option === questions[currentQuestion].correctAnswer
+                    ? '#155724'
+                    : '#721c24'
+                  :'',
+                color:
+                  selectedOption === option
+                  ? option === questions[currentQuestion].correctAnswer
+                    ? '#155724'
+                    : '#721c24'
+                  :'',
+              }}
+              disabled={selectedOption !== null}
+            >
+              {option}
+            </button>
           </li>
         ))}
       </ul>
+      {selectedOption !== null && (
+        <button className={styles.nextBtn} onClick={handleNextQuestion}>Próxima</button>
+      )}
     </div>
   );
 };
